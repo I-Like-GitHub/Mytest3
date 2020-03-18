@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<title>排行榜</title>
+<link rel="stylesheet" href="/static/css/normalize3.0.2.min.css" />
+<link rel="stylesheet" href="/static/css/css.css?v=15" />
+</head>
+<body>
+<section id="ranking"> <span id="ranking_title">我的排行：{{ n }}</span>
+  <section id="ranking_list">
+      {% for foo in r %}
+
+
+          <section class="box">
+              <section class="col_1" title="1">{{ forloop.counter }} </section>
+              <section class="col_2"><img src="/static/images/pic.jpg"  /></section>
+              <section class="col_3">{{ foo.client }}</section>
+              <section class="col_4">{{ foo.grade }}</section>
+          </section>
+      {% endfor %}
+  {% for foo in r %}
+      {% if forloop.counter == n %}
+          <section class="box">
+              <section class="col_1" title="1">{{ n }} </section>
+              <section class="col_2"><img src="/static/images/pic.jpg"  /></section>
+              <section class="col_3">{{ foo.client }}</section>
+              <section class="col_4">{{ foo.grade }}</section>
+          </section>
+      {% endif %}
+  {% endfor %}
+
+        
+
+
+
+
+
+  </section>
+  <a id="play_game" href="#" title="开始游戏">开始游戏</a> 
+
+</section>
+<a id="return_back" href="#" title="返回">返回</a>
+</body>
+</html>
